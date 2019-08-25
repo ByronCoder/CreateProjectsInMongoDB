@@ -1,0 +1,5 @@
+packages/
+Auth0.config
+appsettings.Development.json
+*.dll
+*.exe

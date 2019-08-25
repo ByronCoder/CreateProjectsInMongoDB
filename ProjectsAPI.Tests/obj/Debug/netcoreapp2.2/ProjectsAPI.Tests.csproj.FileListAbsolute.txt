@@ -1,0 +1,14 @@
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\ProjectsAPI.Tests.deps.json
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\ProjectsAPI.Tests.runtimeconfig.json
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\ProjectsAPI.Tests.runtimeconfig.dev.json
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\ProjectsAPI.Tests.dll
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\ProjectsAPI.Tests.pdb
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\ProjectsAPI.Tests.csprojAssemblyReference.cache
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\ProjectsAPI.Tests.csproj.CoreCompileInputs.cache
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\ProjectsAPI.Tests.AssemblyInfoInputs.cache
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\ProjectsAPI.Tests.AssemblyInfo.cs
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\ProjectsAPI.Tests.dll
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\ProjectsAPI.Tests.pdb

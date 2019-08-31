@@ -230,6 +230,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateForm.Designer.cs">
+      <DependentUpon>CreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     <Compile Include="Models\Project.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateForm.resx">
+      <DependentUpon>CreateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

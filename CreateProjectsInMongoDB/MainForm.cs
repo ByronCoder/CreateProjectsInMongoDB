@@ -26,9 +26,10 @@ namespace CreateProjectsInMongoDB
     {
         private Auth0Client client;
         private readonly HttpClient _client;
-        private string token;
         private bool logginIn;
         private string apiUri = ConfigurationManager.AppSettings["apiUri"];
+
+        public static string token;
 
         public MainForm( )
         {
@@ -40,7 +41,6 @@ namespace CreateProjectsInMongoDB
         private async void MainForm_Load(object sender, EventArgs e)
         {
             logginIn = false;
-            btnSave.Enabled = false;
             btnLogin.Visible = true;
             btnLogout.Visible = false;
            
@@ -50,75 +50,16 @@ namespace CreateProjectsInMongoDB
         
 
         private async Task PopulateDataGridView()
-        {
-           
-
+        {       
             var response = await _client.GetAsync(apiUri + "api/Projects");
             var projectsResponseString = await response.Content.ReadAsStringAsync();
             var projectsResponseJson = JArray.Parse(projectsResponseString);
             dgvProjects.DataSource = projectsResponseJson;
         }
 
-        private async Task SaveProject()
-        {
-  
-          
-            Project proj = new Project
-            {
-                title = txtTitle.Text,
-                description = txtDesc.Text,
-                sourceLink = txtSource.Text,
-                demoLink = txtDemo.Text
-            };
-
-            var json = JsonConvert.SerializeObject(proj);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var requestMessage = new HttpRequestMessage(HttpMethod.Post, apiUri + "api/Projects");
-
-            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            requestMessage.Content = content;
-            var projectsResponse = await _client.SendAsync(requestMessage);
-
-           
-
-            if (projectsResponse.IsSuccessStatusCode)
-            {
-                var projectsResponseString = await projectsResponse.Content.ReadAsStringAsync();
-                var responseJson = JObject.Parse(projectsResponseString);
-                
-            }
-            else
-            {
-                MessageBox.Show("Error: " + projectsResponse.StatusCode);
-            }
-
-        }
-
-        private async void BtnSave_Click(object sender, EventArgs e)
-        {
-            if(!string.IsNullOrEmpty(txtTitle.Text) 
-                && !string.IsNullOrEmpty(txtDesc.Text)
-                && !string.IsNullOrEmpty(txtSource.Text)
-                && !string.IsNullOrEmpty(txtDemo.Text)) {
-
-
-                await SaveProject();
-                await PopulateDataGridView();
-            }
-            else
-            {
-                MessageBox.Show("All information must be populated in the text fields");
-            }
-
-
-        }
-
         private async void BtnLogout_Click(object sender, EventArgs e)
         {
-
-            await Logout();
-          
+            await Logout();    
         }
 
         private void Login(LoginResult login)
@@ -130,11 +71,14 @@ namespace CreateProjectsInMongoDB
             }
 
             logginIn = true;
+            lblStatusText.Text = "Logged In";
+            lblStatusText.ForeColor = Color.Green;
             token = login.AccessToken;
-
-            btnSave.Enabled = true;
+            
             btnLogin.Visible = false;
             btnLogout.Visible = true;
+            newProjectToolStripMenuItem.Enabled = true;
+            editDeleteProjectToolStripMenuItem.Enabled = true;
             
         }
 
@@ -149,8 +93,11 @@ namespace CreateProjectsInMongoDB
             }
 
             logginIn = false;
-            btnSave.Enabled = false;
+            lblStatusText.Text = "Not Logged In";
+            lblStatusText.ForeColor = Color.Red;
             btnLogout.Visible = false;
+            newProjectToolStripMenuItem.Enabled = false;
+            editDeleteProjectToolStripMenuItem.Enabled = false;
             btnLogin.Visible = true;
         }
         private async void BtnLogin_Click(object sender, EventArgs e)
@@ -179,6 +126,22 @@ namespace CreateProjectsInMongoDB
             {
                 await Logout();
             }
+        }
+
+        private async void NewProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateForm cfrm = new CreateForm();
+            cfrm.ShowDialog();
+
+            if(cfrm.DialogResult == DialogResult.OK)
+            {
+                await PopulateDataGridView();
+            }
+        }
+
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
  }

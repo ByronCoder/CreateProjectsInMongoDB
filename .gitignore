@@ -1,5 +1,9 @@
+bin/
+obj/
 packages/
 Auth0.config
 appsettings.Development.json
 *.dll
 *.exe
+*.pdb
+*.suo

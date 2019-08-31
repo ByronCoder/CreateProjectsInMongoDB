@@ -29,107 +29,34 @@
         private void InitializeComponent()
         {
             this.dgvProjects = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtDesc = new System.Windows.Forms.TextBox();
-            this.txtSource = new System.Windows.Forms.TextBox();
-            this.txtDemo = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDeleteProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblStatusText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvProjects
             // 
+            this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProjects.Location = new System.Drawing.Point(12, 148);
+            this.dgvProjects.Location = new System.Drawing.Point(12, 94);
             this.dgvProjects.Name = "dgvProjects";
             this.dgvProjects.Size = new System.Drawing.Size(1057, 487);
             this.dgvProjects.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Title:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Description:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Source URL:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Demo URL:";
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(107, 20);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(297, 20);
-            this.txtTitle.TabIndex = 5;
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Location = new System.Drawing.Point(107, 46);
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(297, 20);
-            this.txtDesc.TabIndex = 6;
-            // 
-            // txtSource
-            // 
-            this.txtSource.Location = new System.Drawing.Point(107, 70);
-            this.txtSource.Name = "txtSource";
-            this.txtSource.Size = new System.Drawing.Size(297, 20);
-            this.txtSource.TabIndex = 7;
-            // 
-            // txtDemo
-            // 
-            this.txtDemo.Location = new System.Drawing.Point(107, 96);
-            this.txtDemo.Name = "txtDemo";
-            this.txtDemo.Size = new System.Drawing.Size(297, 20);
-            this.txtDemo.TabIndex = 8;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(107, 119);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
-            // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(608, 119);
+            this.btnLogout.Location = new System.Drawing.Point(12, 57);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.Size = new System.Drawing.Size(124, 31);
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -137,36 +64,95 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(608, 119);
+            this.btnLogin.Location = new System.Drawing.Point(12, 57);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(124, 31);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1091, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newProjectToolStripMenuItem,
+            this.editDeleteProjectToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newProjectToolStripMenuItem
+            // 
+            this.newProjectToolStripMenuItem.Enabled = false;
+            this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newProjectToolStripMenuItem.Text = "New Project";
+            this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProjectToolStripMenuItem_Click);
+            // 
+            // editDeleteProjectToolStripMenuItem
+            // 
+            this.editDeleteProjectToolStripMenuItem.Enabled = false;
+            this.editDeleteProjectToolStripMenuItem.Name = "editDeleteProjectToolStripMenuItem";
+            this.editDeleteProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editDeleteProjectToolStripMenuItem.Text = "Edit/Delete Project";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(12, 24);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblStatus.TabIndex = 13;
+            this.lblStatus.Text = "Status:";
+            // 
+            // lblStatusText
+            // 
+            this.lblStatusText.AutoSize = true;
+            this.lblStatusText.ForeColor = System.Drawing.Color.Red;
+            this.lblStatusText.Location = new System.Drawing.Point(58, 24);
+            this.lblStatusText.Name = "lblStatusText";
+            this.lblStatusText.Size = new System.Drawing.Size(75, 13);
+            this.lblStatusText.TabIndex = 14;
+            this.lblStatusText.Text = "Not Logged In";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 647);
+            this.ClientSize = new System.Drawing.Size(1091, 584);
+            this.Controls.Add(this.lblStatusText);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtDemo);
-            this.Controls.Add(this.txtSource);
-            this.Controls.Add(this.txtDesc);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvProjects);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Add Projects To Mongo DB";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,17 +161,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvProjects;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.TextBox txtSource;
-        private System.Windows.Forms.TextBox txtDemo;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editDeleteProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblStatusText;
     }
 }
 

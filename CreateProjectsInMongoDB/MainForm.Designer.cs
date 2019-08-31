@@ -47,9 +47,10 @@
             this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProjects.Location = new System.Drawing.Point(12, 94);
+            this.dgvProjects.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvProjects.Location = new System.Drawing.Point(0, 97);
             this.dgvProjects.Name = "dgvProjects";
-            this.dgvProjects.Size = new System.Drawing.Size(1057, 487);
+            this.dgvProjects.Size = new System.Drawing.Size(1091, 487);
             this.dgvProjects.TabIndex = 0;
             // 
             // btnLogout

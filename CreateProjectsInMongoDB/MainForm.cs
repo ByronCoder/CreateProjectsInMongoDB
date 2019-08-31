@@ -28,6 +28,7 @@ namespace CreateProjectsInMongoDB
         private readonly HttpClient _client;
         private string token;
         private bool logginIn;
+        private string apiUri = ConfigurationManager.AppSettings["apiUri"];
 
         public MainForm( )
         {
@@ -50,9 +51,9 @@ namespace CreateProjectsInMongoDB
 
         private async Task PopulateDataGridView()
         {
-            string apiUrl = "https://localhost:44312/api/Projects";
+           
 
-            var response = await _client.GetAsync(apiUrl);
+            var response = await _client.GetAsync(apiUri + "api/Projects");
             var projectsResponseString = await response.Content.ReadAsStringAsync();
             var projectsResponseJson = JArray.Parse(projectsResponseString);
             dgvProjects.DataSource = projectsResponseJson;
@@ -61,7 +62,7 @@ namespace CreateProjectsInMongoDB
         private async Task SaveProject()
         {
   
-            string apiUrl = "https://localhost:44312/api/Projects";
+          
             Project proj = new Project
             {
                 title = txtTitle.Text,
@@ -73,7 +74,7 @@ namespace CreateProjectsInMongoDB
             var json = JsonConvert.SerializeObject(proj);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var requestMessage = new HttpRequestMessage(HttpMethod.Post, apiUrl);
+            var requestMessage = new HttpRequestMessage(HttpMethod.Post, apiUri + "api/Projects");
 
             requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             requestMessage.Content = content;
@@ -156,6 +157,7 @@ namespace CreateProjectsInMongoDB
         {
             string domain = ConfigurationManager.AppSettings["Auth0:Domain"];
             string clientId = ConfigurationManager.AppSettings["Auth0:ClientId"];
+            string audience = ConfigurationManager.AppSettings["Auth0:Audience"];
 
             client = new Auth0Client(new Auth0ClientOptions
             {
@@ -167,7 +169,7 @@ namespace CreateProjectsInMongoDB
             var extraParameters = new Dictionary<string, string>();
 
 
-            extraParameters.Add("audience", "https://byroncoder.github.io/ProjectPortfolio/");
+            extraParameters.Add("audience", audience);
             Login(await client.LoginAsync(extraParameters: extraParameters));
         }
 

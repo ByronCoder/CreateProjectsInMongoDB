@@ -13,3 +13,5 @@ C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\API.Tests.csproj.CopyComplete
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\API.Tests.dll
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\API.Tests.pdb
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\bin\Debug\netcoreapp2.2\ProjectsAPI.pdb
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI.Tests\obj\Debug\netcoreapp2.2\API.Tests.csprojAssemblyReference.cache

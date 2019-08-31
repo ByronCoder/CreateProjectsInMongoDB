@@ -44,6 +44,9 @@
             // 
             // dgvProjects
             // 
+            this.dgvProjects.AllowUserToAddRows = false;
+            this.dgvProjects.AllowUserToDeleteRows = false;
+            this.dgvProjects.AllowUserToResizeColumns = false;
             this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -107,6 +110,7 @@
             this.editDeleteProjectToolStripMenuItem.Name = "editDeleteProjectToolStripMenuItem";
             this.editDeleteProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editDeleteProjectToolStripMenuItem.Text = "Edit/Delete Project";
+            this.editDeleteProjectToolStripMenuItem.Click += new System.EventHandler(this.EditDeleteProjectToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -147,6 +151,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Add Projects To Mongo DB";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

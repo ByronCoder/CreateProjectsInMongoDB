@@ -140,10 +140,21 @@ namespace CreateProjectsInMongoDB
                 await PopulateDataGridView();
             }
         }
+        private async void EditDeleteProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditDeleteForm edfrm = new EditDeleteForm();
+            edfrm.ShowDialog();
 
+            if(edfrm.DialogResult == DialogResult.OK)
+            {
+                await PopulateDataGridView();
+            }
+        }
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
+
+        
     }
  }

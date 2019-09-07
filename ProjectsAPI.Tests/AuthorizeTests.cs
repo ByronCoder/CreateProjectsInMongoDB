@@ -14,6 +14,9 @@ using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 using ProjectsAPI.Models;
 using Newtonsoft.Json;
+using Amazon.CognitoIdentityProvider;
+using Amazon.CognitoIdentityProvider.Model;
+using Amazon;
 
 namespace API.Tests
 {
@@ -23,7 +26,9 @@ namespace API.Tests
         private readonly HttpClient _client;
         private IConfiguration _configuration;
         private readonly TestServer _server;
-        
+    
+        private readonly RegionEndpoint _region = RegionEndpoint.USEast1;
+
 
         public AuthorizeTests()
         {
@@ -65,35 +70,59 @@ namespace API.Tests
 
         public async Task<string> GetToken()
         {
-            var auth0Client = new HttpClient();
-            string token = "";
-            var bodyString = $@"{{""client_id"":""{_configuration["Auth0:ClientId"]}"", ""client_secret"":""{_configuration["Auth0:ClientSecret"]}"", ""audience"":""{_configuration["Auth0:Audience"]}"", ""grant_type"":""client_credentials""}}";
-            var response = await auth0Client.PostAsync($"{_configuration["Auth0:Authority"]}oauth/token", new StringContent(bodyString, Encoding.UTF8, "application/json"));
+           
 
-            if(response.IsSuccessStatusCode)
+            User user = new User
             {
-                var responseString = await response.Content.ReadAsStringAsync();
-                var responseJson = JObject.Parse(responseString);
+                    Username = _configuration["AWS:TestUserName"],
+                    Password = _configuration["AWS:TestUserPass"]
+            };
 
-                token = (string)responseJson["access_token"];   
-            }
+            var cognito = new AmazonCognitoIdentityProviderClient(_region);
 
-            return token;
+            var request = new AdminInitiateAuthRequest
+            {
+                UserPoolId = _configuration["AWS:UserPoolId"],
+                ClientId = _configuration["AWS:Authority"],
+                AuthFlow = AuthFlowType.ADMIN_NO_SRP_AUTH
+            };
+
+            request.AuthParameters.Add("USERNAME", user.Username);
+            request.AuthParameters.Add("PASSWORD", user.Password);
+
+            var response = await cognito.AdminInitiateAuthAsync(request);
+
+            return (response.AuthenticationResult.IdToken);
         }
 
         [Fact]
         public async Task TestGetToken()
         {
-            var auth0Client = new HttpClient();
-            var bodyString = $@"{{""client_id"":""{_configuration["Auth0:ClientId"]}"", ""client_secret"":""{_configuration["Auth0:ClientSecret"]}"", ""audience"":""{_configuration["Auth0:Audience"]}"", ""grant_type"":""client_credentials""}}";
-            var response = await auth0Client.PostAsync($"{_configuration["Auth0:Authority"]}oauth/token", new StringContent(bodyString, Encoding.UTF8, "application/json"));
 
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            User user = new User
+            {
+                Username = _configuration["AWS:TestUserName"],
+                Password = _configuration["AWS:TestUserPass"]
 
-            var responseString = await response.Content.ReadAsStringAsync();
-            var responseJson = JObject.Parse(responseString);
-            Assert.NotNull((string)responseJson["access_token"]);
-            Assert.Equal("Bearer", (string)responseJson["token_type"]);
+            };
+
+            var cognito = new AmazonCognitoIdentityProviderClient(_region);
+
+            var request = new AdminInitiateAuthRequest
+            {
+                UserPoolId = _configuration["AWS:UserPoolId"],
+                ClientId = _configuration["AWS:Authority"],
+                AuthFlow = AuthFlowType.ADMIN_NO_SRP_AUTH
+            };
+
+            request.AuthParameters.Add("USERNAME", user.Username);
+            request.AuthParameters.Add("PASSWORD", user.Password);
+
+            var response = await cognito.AdminInitiateAuthAsync(request);
+
+            Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
+
+            Assert.NotNull(response.AuthenticationResult.IdToken);
 
         }
         [Fact]
@@ -123,19 +152,18 @@ namespace API.Tests
             };
 
             var json = JsonConvert.SerializeObject(proj);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+           
 
-            var requestMessage = new HttpRequestMessage(HttpMethod.Post, "/api/Projects");
-        
-            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            requestMessage.Content = content;
-            var projectsResponse = await _client.SendAsync(requestMessage);
-       
-            Assert.True(projectsResponse.IsSuccessStatusCode);
+            _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+            var response = await _client.PostAsync("/api/Projects", new StringContent(json, Encoding.UTF8, "application/json"));
 
-            if(projectsResponse.IsSuccessStatusCode)
+            
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+
+            if(response.IsSuccessStatusCode)
             {
-                var projectsResponseString = await projectsResponse.Content.ReadAsStringAsync();
+                var projectsResponseString = await response.Content.ReadAsStringAsync();
                 var responseJson = JObject.Parse(projectsResponseString);
                 Assert.NotNull((string)responseJson["title"]);
                 Assert.Equal(proj.Title, (string)responseJson["title"]);

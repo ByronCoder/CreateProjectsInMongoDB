@@ -8,6 +8,10 @@ using ProjectsAPI.Services;
 using ProjectsAPI.Models;
 using MongoDB.Driver;
 using Microsoft.AspNetCore.Authorization;
+using Amazon.CognitoIdentityProvider;
+using Amazon.CognitoIdentityProvider.Model;
+using Microsoft.Extensions.Configuration;
+using Amazon;
 
 namespace ProjectsAPI.Controllers
 {
@@ -16,11 +20,12 @@ namespace ProjectsAPI.Controllers
     public class ProjectsController : ControllerBase
     {
         private readonly ProjectService _projService;
+   
 
         public ProjectsController(ProjectService projService)
         {
             _projService = projService;
-
+        
         }
 
         [HttpGet]

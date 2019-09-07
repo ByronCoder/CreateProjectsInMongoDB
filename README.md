@@ -41,7 +41,7 @@ Example appsettings.Development.json file for the ProjectAPI:
 
 ```
 
-Example appsettings.Development.json file for the API.Tests: 
+Example appsettings.Development.json file for the API.Tests (Since the tests need to authenticate with Amazon Cognito, there is additional configuration for the Amazon Cognito Test User): 
 
 ```json
 {
@@ -63,7 +63,9 @@ Example appsettings.Development.json file for the API.Tests:
   },
     "AWS": {
     "Authority": "AWS Cognito Authority Url",
-    "Audience": "Amazon Cognito App Client Id"
+    "Audience": "Amazon Cognito App Client Id",
+    "TestUserName": "Test Username",
+    "TestUserPass": "Test User Password"
   }
   
 }

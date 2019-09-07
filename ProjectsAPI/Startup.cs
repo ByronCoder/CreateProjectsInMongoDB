@@ -55,7 +55,7 @@ namespace ProjectsAPI
             app.UseHttpsRedirection();
 
             app.UseCors(
-                options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().WithHeaders("Content-Type")
+                options => options.WithOrigins("https://byroncoder.github.io").AllowAnyMethod().WithHeaders("Content-Type")
               );
 
             app.UseAuthentication();

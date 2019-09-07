@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.CognitoIdentityProvider;
@@ -11,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ProjectsAPI.Controllers
 {
- 
+
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
@@ -48,30 +46,37 @@ namespace ProjectsAPI.Controllers
         public async Task<ActionResult<string>> SignIn(User user)
         {
             var cognito = new AmazonCognitoIdentityProviderClient(_region);
-
-            var request = new AdminInitiateAuthRequest
+            try
             {
-                UserPoolId = "us-east-1_h2hBTYgfp",
-                ClientId = _clientId,
-                AuthFlow = AuthFlowType.ADMIN_NO_SRP_AUTH
-            };
+                    var request = new AdminInitiateAuthRequest
+                     {
+                            UserPoolId = "us-east-1_h2hBTYgfp",
+                            ClientId = _clientId,
+                            AuthFlow = AuthFlowType.ADMIN_NO_SRP_AUTH
+                     };
 
-            request.AuthParameters.Add("USERNAME", user.Username);
-            request.AuthParameters.Add("PASSWORD", user.Password);
+                    request.AuthParameters.Add("USERNAME", user.Username);
+                    request.AuthParameters.Add("PASSWORD", user.Password);
 
-            var response = await cognito.AdminInitiateAuthAsync(request);
+                    var response = await cognito.AdminInitiateAuthAsync(request);
+       
+                    return Ok(response.AuthenticationResult.IdToken);
 
-            if (response.HttpStatusCode == System.Net.HttpStatusCode.OK)
-            {
-                return Ok(response.AuthenticationResult.IdToken);
             }
-            else
+            catch(UserNotFoundException)
             {
-                return BadRequest(response.HttpStatusCode);
+                return BadRequest("Username or password is invalid");
             }
-
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
             
 
-        }
+           
+        
+
+
+    }
     }
 }

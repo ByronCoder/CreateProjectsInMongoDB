@@ -2,12 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -71,7 +66,7 @@ namespace CreateProjectsInMongoDB
             }
             else
             {
-                MessageBox.Show("Error: " + projectsResponse.StatusCode);
+                MessageBox.Show("Error saving data: " + projectsResponse.StatusCode);
             }
 
         }

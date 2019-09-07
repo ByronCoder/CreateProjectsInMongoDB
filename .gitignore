@@ -2,6 +2,7 @@ bin/
 obj/
 packages/
 Auth0.config
+AWS.config
 appsettings.Development.json
 *.dll
 *.exe

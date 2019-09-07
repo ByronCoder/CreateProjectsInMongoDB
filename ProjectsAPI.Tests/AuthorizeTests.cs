@@ -1,5 +1,3 @@
-using System;
-using System.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using System.IO;
@@ -14,9 +12,6 @@ using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 using ProjectsAPI.Models;
 using Newtonsoft.Json;
-using Amazon.CognitoIdentityProvider;
-using Amazon.CognitoIdentityProvider.Model;
-using Amazon;
 
 namespace API.Tests
 {
@@ -26,10 +21,7 @@ namespace API.Tests
         private readonly HttpClient _client;
         private IConfiguration _configuration;
         private readonly TestServer _server;
-    
-        private readonly RegionEndpoint _region = RegionEndpoint.USEast1;
-
-
+   
         public AuthorizeTests()
         {
             
@@ -71,28 +63,18 @@ namespace API.Tests
         public async Task<string> GetToken()
         {
            
-
             User user = new User
             {
                     Username = _configuration["AWS:TestUserName"],
                     Password = _configuration["AWS:TestUserPass"]
             };
 
-            var cognito = new AmazonCognitoIdentityProviderClient(_region);
+            var json = JsonConvert.SerializeObject(user);
 
-            var request = new AdminInitiateAuthRequest
-            {
-                UserPoolId = _configuration["AWS:UserPoolId"],
-                ClientId = _configuration["AWS:Authority"],
-                AuthFlow = AuthFlowType.ADMIN_NO_SRP_AUTH
-            };
+            var response = await _client.PostAsync("api/signin", new StringContent(json, Encoding.UTF8, "application/json"));
+            var responseString = await response.Content.ReadAsStringAsync();
 
-            request.AuthParameters.Add("USERNAME", user.Username);
-            request.AuthParameters.Add("PASSWORD", user.Password);
-
-            var response = await cognito.AdminInitiateAuthAsync(request);
-
-            return (response.AuthenticationResult.IdToken);
+            return responseString;
         }
 
         [Fact]
@@ -103,26 +85,17 @@ namespace API.Tests
             {
                 Username = _configuration["AWS:TestUserName"],
                 Password = _configuration["AWS:TestUserPass"]
-
             };
 
-            var cognito = new AmazonCognitoIdentityProviderClient(_region);
+            var json = JsonConvert.SerializeObject(user);
 
-            var request = new AdminInitiateAuthRequest
-            {
-                UserPoolId = _configuration["AWS:UserPoolId"],
-                ClientId = _configuration["AWS:Authority"],
-                AuthFlow = AuthFlowType.ADMIN_NO_SRP_AUTH
-            };
+            var response = await _client.PostAsync("api/signin", new StringContent(json, Encoding.UTF8, "application/json"));
+            var responseString = await response.Content.ReadAsStringAsync();
 
-            request.AuthParameters.Add("USERNAME", user.Username);
-            request.AuthParameters.Add("PASSWORD", user.Password);
 
-            var response = await cognito.AdminInitiateAuthAsync(request);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
-            Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
-
-            Assert.NotNull(response.AuthenticationResult.IdToken);
+            Assert.NotNull(responseString);
 
         }
         [Fact]

@@ -72,14 +72,14 @@ Example appsettings.Development.json file for the API.Tests (Since the tests nee
 
 ```
 
-You will also need to create a file called AWSCognito.config in the root directory of the Windows Forms Project CreateProjectsInMongoDB
+You will also need to create a file called AWS.config in the root directory of the Windows Forms Project CreateProjectsInMongoDB
 
 
 ```xml
 <appSettings>
-    <add key="AWS:ClientId" value="Amazon Cognito App Client Id"/>
+    <add key="AWS:Audience" value="Amazon Cognito App Client Id"/>
     <add key="AWS:Domain" value="Amazon Cognito Authority Url"/>
-    <add key="AWS:ClientId" value="Amazon Cognito App Client Id"/>
+    <add key="AWS:UserPoolId" value="Amazon Cognito App UserPool Id"/>
 </appSettings>
 ```
 

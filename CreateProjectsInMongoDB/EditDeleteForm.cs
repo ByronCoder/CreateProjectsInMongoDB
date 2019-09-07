@@ -2,12 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -98,6 +93,10 @@ namespace CreateProjectsInMongoDB
             {
                 DialogResult = DialogResult.OK;
             }
+            else
+            {
+                MessageBox.Show("Error saving data: " + projectsResponse.StatusCode);
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -118,6 +117,10 @@ namespace CreateProjectsInMongoDB
                 if (projectsResponse.IsSuccessStatusCode)
                 {
                     DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Error deleting data: " + projectsResponse.StatusCode);
                 }
             }
            

@@ -1,22 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 using System.Windows.Forms;
-using Auth0.OidcClient;
 using CreateProjectsInMongoDB.Models;
-using IdentityModel.OidcClient;
-using IdentityModel.OidcClient.Browser;
-using MongoDB.Driver;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -24,7 +13,6 @@ namespace CreateProjectsInMongoDB
 {
     public partial class MainForm : Form
     {
-        private Auth0Client client;
         private readonly HttpClient _client;
         private bool logginIn;
         private string apiUri = ConfigurationManager.AppSettings["apiUri"];
@@ -59,40 +47,16 @@ namespace CreateProjectsInMongoDB
             
         }
 
-        private async void BtnLogout_Click(object sender, EventArgs e)
+        private void BtnLogout_Click(object sender, EventArgs e)
         {
-            await Logout();    
+             Logout();    
         }
 
-        private void Login(LoginResult login)
+        
+
+        private void Logout()
         {
-            if(login.IsError)
-            {
-                MessageBox.Show(login.Error);
-                return;
-            }
-
-            logginIn = true;
-            lblStatusText.Text = "Logged In";
-            lblStatusText.ForeColor = Color.Green;
-            token = login.AccessToken;
-            
-            btnLogin.Visible = false;
-            btnLogout.Visible = true;
-            newProjectToolStripMenuItem.Enabled = true;
-            editDeleteProjectToolStripMenuItem.Enabled = true;
-            
-        }
-
-        private async Task Logout()
-        {
-            BrowserResultType browserResult = await client.LogoutAsync();
-
-            if (browserResult != BrowserResultType.Success)
-            {
-                MessageBox.Show(browserResult.ToString());
-                return;
-            }
+            token = null; // forget token
 
             logginIn = false;
             lblStatusText.Text = "Not Logged In";
@@ -102,31 +66,35 @@ namespace CreateProjectsInMongoDB
             editDeleteProjectToolStripMenuItem.Enabled = false;
             btnLogin.Visible = true;
         }
-        private async void BtnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            string domain = ConfigurationManager.AppSettings["Auth0:Domain"];
-            string clientId = ConfigurationManager.AppSettings["Auth0:ClientId"];
-            string audience = ConfigurationManager.AppSettings["Auth0:Audience"];
+            LoginForm loginForm = new LoginForm();
 
-            client = new Auth0Client(new Auth0ClientOptions
+            DialogResult loginResult = loginForm.ShowDialog();
+
+            if(loginResult == DialogResult.OK)
             {
-                Domain = domain,
-                ClientId = clientId
-            });
-
-
-            var extraParameters = new Dictionary<string, string>();
-
-
-            extraParameters.Add("audience", audience);
-            Login(await client.LoginAsync(extraParameters: extraParameters));
+                logginIn = true;
+                lblStatusText.Text = "Logged In";
+                lblStatusText.ForeColor = Color.Green;
+                btnLogin.Visible = false;
+                btnLogout.Visible = true;
+                newProjectToolStripMenuItem.Enabled = true;
+                editDeleteProjectToolStripMenuItem.Enabled = true;
+            }
+            else if (loginResult == DialogResult.None)
+            {
+                MessageBox.Show("Error loggin in");
+            }
+            
+            
         }
 
-        private async void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (logginIn)
             {
-                await Logout();
+                Logout();
             }
         }
 

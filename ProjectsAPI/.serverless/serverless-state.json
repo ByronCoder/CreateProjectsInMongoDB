@@ -119,7 +119,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/ProjectsAPI/dev/1567869355095-2019-09-07T15:15:55.095Z/bin/release/netcoreapp2.1/deploy-package.zip"
+                "S3Key": "serverless/ProjectsAPI/dev/1567885529555-2019-09-07T19:45:29.555Z/bin/release/netcoreapp2.1/deploy-package.zip"
               },
               "FunctionName": "ProjectsAPI-dev-api",
               "Handler": "ProjectsAPI::ProjectsAPI.LambdaEntryPoint::FunctionHandlerAsync",
@@ -138,14 +138,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ApiLambdaVersionaxlY92vlKQO3mDH8MiUos42mFV02dF1z2kUROgHt5KQ": {
+          "ApiLambdaVersionTXRNOgcm2qgoYpyk5ij4P0kDi2LJgP35WLlbyRGuXZw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "KFded3DEulr18/6VnozF911l7pa7wqXbjTXVcum1Am0="
+              "CodeSha256": "NQENZR2J+rEhTaK8NCwfpwHnUHLg2pKBUfLAATSN/To="
             }
           },
           "ApiGatewayRestApi": {
@@ -217,7 +217,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1567869349532": {
+          "ApiGatewayDeployment1567885525079": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -276,7 +276,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionaxlY92vlKQO3mDH8MiUos42mFV02dF1z2kUROgHt5KQ"
+              "Ref": "ApiLambdaVersionTXRNOgcm2qgoYpyk5ij4P0kDi2LJgP35WLlbyRGuXZw"
             }
           },
           "ServiceEndpoint": {
@@ -357,7 +357,7 @@
     "layers": {}
   },
   "package": {
-    "artifactDirectoryName": "serverless/ProjectsAPI/dev/1567869355095-2019-09-07T15:15:55.095Z",
+    "artifactDirectoryName": "serverless/ProjectsAPI/dev/1567885529555-2019-09-07T19:45:29.555Z",
     "artifact": "bin/release/netcoreapp2.1/deploy-package.zip"
   }
 }

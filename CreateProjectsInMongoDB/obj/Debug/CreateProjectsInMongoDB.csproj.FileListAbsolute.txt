@@ -49,3 +49,4 @@ C:\Users\byron\source\repos\CreateProjectsInMongoDB\CreateProjectsInMongoDB\bin\
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\CreateProjectsInMongoDB\obj\Debug\CreateProjectsInMongoDB.CreateForm.resources
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\CreateProjectsInMongoDB\obj\Debug\CreateProjectsInMongoDB.EditDeleteForm.resources
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\CreateProjectsInMongoDB\obj\Debug\CreateProjectsInMongoDB.csprojAssemblyReference.cache
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\CreateProjectsInMongoDB\obj\Debug\CreateProjectsInMongoDB.LoginForm.resources

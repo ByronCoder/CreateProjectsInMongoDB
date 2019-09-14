@@ -105,7 +105,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/ProjectsAPI/dev/1567886287744-2019-09-07T19:58:07.744Z/bin/release/netcoreapp2.1/deploy-package.zip"
+          "S3Key": "serverless/ProjectsAPI/dev/1568475293450-2019-09-14T15:34:53.450Z/bin/release/netcoreapp2.1/deploy-package.zip"
         },
         "FunctionName": "ProjectsAPI-dev-api",
         "Handler": "ProjectsAPI::ProjectsAPI.LambdaEntryPoint::FunctionHandlerAsync",
@@ -124,14 +124,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersionGz7QTCBS3dDJwSbOEm6aqzeKAiVBGxVS0qkhS0SJm0": {
+    "ApiLambdaVersionODIkfAt6bmjFI5crA2MLZa1uuXlc0vBwuXROi7XgNcM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "rFBaHpZ40whg/mVRqVThfDqGbgL09gZFpbnbagHjeh8="
+        "CodeSha256": "vxjFYbKh5S7pwbPGsIvQqO6QpYc7pzpLbZ838so0acI="
       }
     },
     "ApiGatewayRestApi": {
@@ -203,7 +203,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1567886283216": {
+    "ApiGatewayDeployment1568475283628": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -262,7 +262,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionGz7QTCBS3dDJwSbOEm6aqzeKAiVBGxVS0qkhS0SJm0"
+        "Ref": "ApiLambdaVersionODIkfAt6bmjFI5crA2MLZa1uuXlc0vBwuXROi7XgNcM"
       }
     },
     "ServiceEndpoint": {

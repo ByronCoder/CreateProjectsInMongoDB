@@ -127,7 +127,7 @@
           "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
         }
       },
-      "Microsoft.AspNetCore/2.1.1": {
+      "Microsoft.AspNetCore/2.1.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics": "2.1.1",
@@ -135,8 +135,8 @@
           "Microsoft.AspNetCore.Hosting": "2.1.1",
           "Microsoft.AspNetCore.Routing": "2.1.1",
           "Microsoft.AspNetCore.Server.IISIntegration": "2.1.1",
-          "Microsoft.AspNetCore.Server.Kestrel": "2.1.1",
-          "Microsoft.AspNetCore.Server.Kestrel.Https": "2.1.1",
+          "Microsoft.AspNetCore.Server.Kestrel": "2.1.3",
+          "Microsoft.AspNetCore.Server.Kestrel.Https": "2.1.3",
           "Microsoft.Extensions.Configuration.CommandLine": "2.1.1",
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "2.1.1",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.1.1",
@@ -329,7 +329,7 @@
           "build/netcoreapp2.1/_._": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication/2.1.1": {
+      "Microsoft.AspNetCore.Authentication/2.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": "2.1.1",
@@ -411,10 +411,10 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/2.1.1": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/2.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "2.1.1",
+          "Microsoft.AspNetCore.Authentication": "2.1.2",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.2.0"
         },
         "compile": {
@@ -960,18 +960,18 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.MiddlewareAnalysis.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc/2.1.1": {
+      "Microsoft.AspNetCore.Mvc/2.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.ApiExplorer": "2.1.1",
-          "Microsoft.AspNetCore.Mvc.Cors": "2.1.1",
-          "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.1.1",
-          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.1.1",
-          "Microsoft.AspNetCore.Mvc.Localization": "2.1.1",
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "2.1.2",
+          "Microsoft.AspNetCore.Mvc.Cors": "2.1.2",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.1.2",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.1.2",
+          "Microsoft.AspNetCore.Mvc.Localization": "2.1.2",
           "Microsoft.AspNetCore.Mvc.Razor.Extensions": "2.1.1",
-          "Microsoft.AspNetCore.Mvc.RazorPages": "2.1.1",
-          "Microsoft.AspNetCore.Mvc.TagHelpers": "2.1.1",
-          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.1",
+          "Microsoft.AspNetCore.Mvc.RazorPages": "2.1.2",
+          "Microsoft.AspNetCore.Mvc.TagHelpers": "2.1.2",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.2",
           "Microsoft.AspNetCore.Razor.Design": "2.1.1",
           "Microsoft.Extensions.Caching.Memory": "2.1.1",
           "Microsoft.Extensions.DependencyInjection": "2.1.1"
@@ -5725,16 +5725,16 @@
         "microsoft.aspnet.webapi.client.nuspec"
       ]
     },
-    "Microsoft.AspNetCore/2.1.1": {
-      "sha512": "9r1qojnhb9BJYqK+vpyzzHoovfc12VHQ5l61blIn1QHWb8R6946LKoUnteXbtpy3Sn8bn4OAB5ZEPKwwAyeGjQ==",
+    "Microsoft.AspNetCore/2.1.3": {
+      "sha512": "36Auu/VciTycfc2gqjUw8bta7dxBrRlZ5PewWLG5ksEWZfq2F1rEEqkRhujfrvLIndiRhuf3wEl3R2pJZwFgVg==",
       "type": "package",
-      "path": "microsoft.aspnetcore/2.1.1",
+      "path": "microsoft.aspnetcore/2.1.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.xml",
-        "microsoft.aspnetcore.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.2.1.3.nupkg.sha512",
         "microsoft.aspnetcore.nuspec"
       ]
     },
@@ -5765,16 +5765,16 @@
         "microsoft.aspnetcore.app.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authentication/2.1.1": {
-      "sha512": "F9Ewm6Oo5hn1CR7HglsZnKM5pMJekdZoGJoi8fnKEFOoQruxJUQVpHB8dfpB+0ZJmyeapGn+grdrXsoBWilIFg==",
+    "Microsoft.AspNetCore.Authentication/2.1.2": {
+      "sha512": "RYM3HHMm/MNwsbUh1xnrhosAGNeZV2Q/FmNQrblgytIK1HIZ6UqNMorFI+kz2MW7gNKHKn6TBLTUXPRmqC6iRQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication/2.1.1",
+      "path": "microsoft.aspnetcore.authentication/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.xml",
-        "microsoft.aspnetcore.authentication.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.2.1.2.nupkg.sha512",
         "microsoft.aspnetcore.authentication.nuspec"
       ]
     },
@@ -5843,16 +5843,16 @@
         "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/2.1.1": {
-      "sha512": "lMakzPdMkf4rpwy+YY3cd4VeFqdqM8vwt9pT6Lc1eyKMgOTPgAgesgOwHQf4JUASFBTkG/mTPC+miQwG1WGymg==",
+    "Microsoft.AspNetCore.Authentication.JwtBearer/2.1.2": {
+      "sha512": "hedJ6YxyZRIJPXC2olml9YM5t3+yIFt9hcyBXp/q5+z4XpJMY5gUwbc1F5QRGEdcvwSCpFmmRLVaPPh4Kiaq0g==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/2.1.1",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
-        "microsoft.aspnetcore.authentication.jwtbearer.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.2.1.2.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
@@ -6355,16 +6355,16 @@
         "microsoft.aspnetcore.middlewareanalysis.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc/2.1.1": {
-      "sha512": "hFr14TSHMAGWIZuQNUyyKMOv1d2INBEGrdMeiaHIW9ksRn+NoCVSUvAudy12sr33XHmvkYxlFGa+/pMep2Uv5g==",
+    "Microsoft.AspNetCore.Mvc/2.1.2": {
+      "sha512": "gndI4x01n3l9X7iguxRoiKLFXuWAXL31fmWw0s7MplsU+FvKPawkUAAYxo8bXXQHtMHkBCzr5xTPlyefpcwOgg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc/2.1.1",
+      "path": "microsoft.aspnetcore.mvc/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.xml",
-        "microsoft.aspnetcore.mvc.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.2.1.2.nupkg.sha512",
         "microsoft.aspnetcore.mvc.nuspec"
       ]
     },
@@ -14805,11 +14805,11 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "Microsoft.AspNetCore >= 2.1.1",
-      "Microsoft.AspNetCore.Authentication >= 2.1.1",
-      "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.1.1",
+      "Microsoft.AspNetCore >= 2.1.3",
+      "Microsoft.AspNetCore.Authentication >= 2.1.2",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.1.2",
       "Microsoft.AspNetCore.HttpsPolicy >= 2.1.1",
-      "Microsoft.AspNetCore.Mvc >= 2.1.1",
+      "Microsoft.AspNetCore.Mvc >= 2.1.2",
       "Microsoft.AspNetCore.TestHost >= 2.1.1",
       "Microsoft.NET.Test.Sdk >= 16.0.1",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -14866,15 +14866,15 @@
         "dependencies": {
           "Microsoft.AspNetCore": {
             "target": "Package",
-            "version": "[2.1.1, )"
+            "version": "[2.1.3, )"
           },
           "Microsoft.AspNetCore.Authentication": {
             "target": "Package",
-            "version": "[2.1.1, )"
+            "version": "[2.1.2, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
-            "version": "[2.1.1, )"
+            "version": "[2.1.2, )"
           },
           "Microsoft.AspNetCore.HttpsPolicy": {
             "target": "Package",
@@ -14882,7 +14882,7 @@
           },
           "Microsoft.AspNetCore.Mvc": {
             "target": "Package",
-            "version": "[2.1.1, )"
+            "version": "[2.1.2, )"
           },
           "Microsoft.AspNetCore.TestHost": {
             "target": "Package",
@@ -14918,43 +14918,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.AspNetCore from 2.1.3 to 2.1.1. Reference the package directly from the project to select a different version. \r\n API.Tests -> ProjectsAPI -> Microsoft.AspNetCore.App 2.1.4 -> Microsoft.AspNetCore (>= 2.1.3 && < 2.2.0) \r\n API.Tests -> Microsoft.AspNetCore (>= 2.1.1)",
-      "libraryId": "Microsoft.AspNetCore",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.AspNetCore.Authentication from 2.1.2 to 2.1.1. Reference the package directly from the project to select a different version. \r\n API.Tests -> ProjectsAPI -> Microsoft.AspNetCore.App 2.1.4 -> Microsoft.AspNetCore.Authentication (>= 2.1.2 && < 2.2.0) \r\n API.Tests -> Microsoft.AspNetCore.Authentication (>= 2.1.1)",
-      "libraryId": "Microsoft.AspNetCore.Authentication",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.AspNetCore.Authentication.JwtBearer from 2.1.2 to 2.1.1. Reference the package directly from the project to select a different version. \r\n API.Tests -> ProjectsAPI -> Microsoft.AspNetCore.App 2.1.4 -> Microsoft.AspNetCore.Authentication.JwtBearer (>= 2.1.2 && < 2.2.0) \r\n API.Tests -> Microsoft.AspNetCore.Authentication.JwtBearer (>= 2.1.1)",
-      "libraryId": "Microsoft.AspNetCore.Authentication.JwtBearer",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.AspNetCore.Mvc from 2.1.2 to 2.1.1. Reference the package directly from the project to select a different version. \r\n API.Tests -> ProjectsAPI -> Microsoft.AspNetCore.App 2.1.4 -> Microsoft.AspNetCore.Mvc (>= 2.1.2 && < 2.2.0) \r\n API.Tests -> Microsoft.AspNetCore.Mvc (>= 2.1.1)",
-      "libraryId": "Microsoft.AspNetCore.Mvc",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    }
-  ]
+  }
 }

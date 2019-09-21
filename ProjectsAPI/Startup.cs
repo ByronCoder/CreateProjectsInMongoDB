@@ -34,6 +34,7 @@ namespace ProjectsAPI
             });
           
             services.AddScoped<ProjectService>();
+            services.AddTransient<IEmailService, EmailService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();
            

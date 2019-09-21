@@ -17,7 +17,6 @@ C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\bin\Debug\netcor
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\bin\Debug\netcoreapp2.1\ProjectsAPI.runtimeconfig.dev.json
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\bin\Debug\netcoreapp2.1\ProjectsAPI.dll
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\bin\Debug\netcoreapp2.1\ProjectsAPI.pdb
-C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcoreapp2.1\ProjectsAPI.csprojAssemblyReference.cache
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcoreapp2.1\ProjectsAPI.csproj.CoreCompileInputs.cache
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcoreapp2.1\ProjectsAPI.RazorAssemblyInfo.cache
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcoreapp2.1\ProjectsAPI.RazorAssemblyInfo.cs
@@ -26,3 +25,4 @@ C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcor
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcoreapp2.1\ProjectsAPI.RazorTargetAssemblyInfo.cache
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcoreapp2.1\ProjectsAPI.dll
 C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcoreapp2.1\ProjectsAPI.pdb
+C:\Users\byron\source\repos\CreateProjectsInMongoDB\ProjectsAPI\obj\Debug\netcoreapp2.1\ProjectsAPI.csprojAssemblyReference.cache

@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[1.4.0, )"
             },
+            "Microsoft.AspNet.WebApi.Core": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNetCore.App": {
               "target": "Package",
               "version": "[2.1.4, )"
@@ -86,11 +90,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true
-        }
-      },
-      "runtimes": {
-        "rhel.7.2-x64": {
-          "#import": []
         }
       }
     }
